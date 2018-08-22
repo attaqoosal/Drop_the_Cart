@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="andro.com.cart.game">
+	<insert id="ct_insert" parameterType="andro.com.cart.game.model.CartVO">
+		insert into cart(num,name,price,imgName,ctCuCheck)
+		values(seq_cartgame.nextval,#{name},#{price},#{imgName},#{ctCuCheck})
+	</insert>
+
+	<update id="ct_update" parameterType="andro.com.cart.game.model.CartVO">
+		update cart set name=#{name},price=#{price},imgName=#{imgName},ctCuCheck=#{ctCuCheck} where num=#{num}
+	</update>
+
+	<delete id="ct_delete" parameterType="int">
+		delete from cart where num=#{num}
+	</delete>
+
+	<select id="ct_selectAll" resultType="andro.com.cart.game.model.CartVO">
+		select * from cart order by num desc
+	</select>
+
+	<select id="ct_selectOne" resultType="andro.com.cart.game.model.CartVO">
+		select * from cart where num=#{num}
+	</select>
+	
+	<insert id="cu_insert" parameterType="andro.com.cart.game.model.CouponVO">
+		insert into coupon(num,name,price,imgName,ctCuCheck)
+		values(seq_cartgame.nextval,#{name},#{price},#{imgName},#{ctCuCheck})
+	</insert>
+
+	<update id="cu_update" parameterType="andro.com.cart.game.model.CouponVO">
+		update coupon set name=#{name},price=#{price},imgName=#{imgName},ctCuCheck=#{ctCuCheck} where num=#{num}
+	</update>
+
+	<delete id="cu_delete" parameterType="int">
+		delete from coupon where num=#{num}
+	</delete>
+
+	<select id="cu_selectAll" resultType="andro.com.cart.game.model.CouponVO">
+		select * from coupon order by num desc
+	</select>
+
+	<select id="cu_selectOne" resultType="andro.com.cart.game.model.CouponVO">
+		select * from coupon where num=#{num}
+	</select>
+</mapper>

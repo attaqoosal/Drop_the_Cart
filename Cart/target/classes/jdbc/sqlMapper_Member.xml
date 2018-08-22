@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="andro.com.cart.member">
+	<!-- #{title},#{content},#{name} -->
+	<insert id="m_insert" parameterType="andro.com.cart.member.model.memberVO">
+		insert into member(memberNum,memberID,memberPW,memberAuth)
+		values(seq_member.nextval,#{memberID},#{memberPW},#{memberAuth})
+	</insert>
+
+	<update id="m_update" parameterType="andro.com.cart.member.model.memberVO">
+		update member set memberID=#{memberID},memberPW=#{memberPW},memberAuth=#{memberAuth} where memberNum=#{memberNum}
+	</update>
+
+	<delete id="m_delete" parameterType="int">
+		delete from member where memberNum=#{memberNum}
+	</delete>
+
+	<select id="m_selectAll" resultType="andro.com.cart.member.model.memberVO">
+		select * from member order by memberNum desc
+	</select>
+
+	<!-- select * from board where num=? -->
+	<select id="m_selectOne" resultType="andro.com.cart.member.model.memberVO">
+		select * from member where memberNum=#{memberNum}
+	</select>
+	
+	<!-- select * from board where ID=? -->
+	<select id="m_selectID" resultType="andro.com.cart.member.model.memberVO">
+		select * from member where memberID=#{memberID}
+	</select>
+	
+</mapper>

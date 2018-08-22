@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">장바구니 프로젝트</string>
+    <string name="alert_dialog_ok">OK</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="alert_dialog_delete">정말로 종료하시겠습니까?</string>
+    <string name="alert_dialog_keep">싫어</string>
+    <string name="alert_dialog_cartlist">장바구니로 이동 하겠습니다.</string>
+    <string name="play_again">다시게임하기</string>
+    <string name="alert_dialog_game">게임을 다시하시겠습니까?</string>
+    <string name="login">로그인</string>
+    <string name="payment">결제</string>
+    <string name="alert_payment">결제하시겠습니까?</string>
+    <string name="numb">번호</string>
+    <string name="name">이름</string>
+    <string name="price">가격</string>
+    <string name="image">이미지</string>
+    <string name="ctcucheck">상품/쿠폰</string>
+</resources>
